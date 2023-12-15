@@ -44,23 +44,24 @@ requirements:
     - llvm-openmp                  # [osx]
   host:
     - r-base
-    - r-bh
-    - r-matrix
-    - r-rcpp
-    - r-rcpparmadillo >=0.11.2.3.1
     - r-backports
+    - r-bh
     - r-checkmate
     - r-cli
     - r-knitr
     - r-lbfgsb3c
     - r-lotri
     - r-magrittr
+    - r-matrix
+    - r-minpack.lm
     - r-minqa
     - r-n1qn1 >=6.0.1_10
     - r-nlme
     - r-nlmixr2data
+    - r-rcpp
+    - r-rcpparmadillo >=0.11.2.3.1
     - r-rex
-    - r-rxode2 >=2.0.12
+    - r-rxode2 >=2.1.0
     - r-rxode2parse >=2.0.11
     - r-rxode2random >=2.0.9
     - r-symengine
@@ -70,9 +71,6 @@ requirements:
     - r-base
     - {{ native }}gcc-libs           # [win]
     - {{ native }}libwinpthread-git  # [win]
-    - r-matrix
-    - r-rcpp
-    - r-rcpparmadillo >=0.11.2.3.1
     - r-backports
     - r-checkmate
     - r-cli
@@ -80,12 +78,16 @@ requirements:
     - r-lbfgsb3c
     - r-lotri
     - r-magrittr
+    - r-matrix
+    - r-minpack.lm
     - r-minqa
     - r-n1qn1 >=6.0.1_10
     - r-nlme
     - r-nlmixr2data
+    - r-rcpp
+    - r-rcpparmadillo >=0.11.2.3.1
     - r-rex
-    - r-rxode2 >=2.0.12
+    - r-rxode2 >=2.1.0
     - r-rxode2parse >=2.0.11
     - r-rxode2random >=2.0.9
     - r-symengine
