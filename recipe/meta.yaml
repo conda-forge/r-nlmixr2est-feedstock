@@ -9,7 +9,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/nlmixr2est_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/nlmixr2est/nlmixr2est_{{ version }}.tar.gz
-  sha256: 243fdbad043836a73844cef5a293604b474e1e6f482729e72dbc814ac54f474c
+  sha256: 40454f2ad1697c9772f2dab67d15f282c7b0c62db6cc1850268f53550b6c9bc4
 
 build:
   number: 1
