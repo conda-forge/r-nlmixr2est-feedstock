@@ -67,7 +67,6 @@ requirements:
     - liblapack
   run:
     - r-base
-    - libwinpthread-git  # [win]
     - r-backports
     - r-checkmate
     - r-cli
