@@ -1,6 +1,5 @@
-{% set version = "2.2.1" %}
+{% set version = "3.0.2" %}
 {% set posix = 'm2-' if win else '' %}
-{% set native = 'm2w64-' if win else '' %}
 
 package:
   name: r-nlmixr2est
@@ -10,11 +9,10 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/nlmixr2est_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/nlmixr2est/nlmixr2est_{{ version }}.tar.gz
-  sha256: 243fdbad043836a73844cef5a293604b474e1e6f482729e72dbc814ac54f474c
+  sha256: 40454f2ad1697c9772f2dab67d15f282c7b0c62db6cc1850268f53550b6c9bc4
 
 build:
-  merge_build_host: true  # [win]
-  number: 0
+  number: 1
   rpaths:
     - lib/R/lib/
     - lib/
@@ -27,7 +25,9 @@ requirements:
   build:
     - cross-r-base {{ r_base }}    # [build_platform != target_platform]
     - {{ compiler('c') }}          # [not win]
+    - {{ stdlib("c") }}            # [not win]
     - {{ compiler('m2w64_c') }}    # [win]
+    - {{ stdlib("m2w64_c") }}      # [win]
     - {{ compiler('cxx') }}        # [not win]
     - {{ compiler('m2w64_cxx') }}  # [win]
     - {{ posix }}filesystem        # [win]
@@ -36,7 +36,7 @@ requirements:
     - {{ posix }}autoconf
     - {{ posix }}automake          # [not win]
     - {{ posix }}automake-wrapper  # [win]
-    - {{ posix }}pkg-config
+    - pkg-config
     - {{ posix }}make
     - {{ posix }}coreutils         # [win]
     - {{ posix }}zip               # [win]
@@ -62,15 +62,12 @@ requirements:
     - r-rcpparmadillo >=0.11.2.3.1
     - r-rex
     - r-rxode2 >=2.1.0
-    - r-rxode2parse >=2.0.11
-    - r-rxode2random >=2.0.9
     - r-symengine
     - libblas
     - liblapack
   run:
+    - libgomp  # [win]
     - r-base
-    - {{ native }}gcc-libs           # [win]
-    - {{ native }}libwinpthread-git  # [win]
     - r-backports
     - r-checkmate
     - r-cli
@@ -88,8 +85,6 @@ requirements:
     - r-rcpparmadillo >=0.11.2.3.1
     - r-rex
     - r-rxode2 >=2.1.0
-    - r-rxode2parse >=2.0.11
-    - r-rxode2random >=2.0.9
     - r-symengine
 
 test:
