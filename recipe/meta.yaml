@@ -65,7 +65,6 @@ requirements:
     - r-symengine
     - libblas
     - liblapack
-    - pcre2=10.46
   run:
     - libgomp  # [win]
     - r-base
