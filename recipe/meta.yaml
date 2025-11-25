@@ -1,4 +1,4 @@
-{% set version = "3.0.4" %}
+{% set version = "4.1.1" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -9,10 +9,10 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/nlmixr2est_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/nlmixr2est/nlmixr2est_{{ version }}.tar.gz
-  sha256: 125aec4ae568ddca9a5950ec25f4d118d7692377a3402c44934bb67016b65371
+  sha256: ea845a1b6221e59e932849fd5d2495200e06c37fc746c50a559f5bc7e15b5572
 
 build:
-  number: 1
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
